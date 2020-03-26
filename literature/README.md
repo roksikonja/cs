@@ -24,6 +24,8 @@ parallel with the anchor point $s_t$ selected at random by solving regularized S
 
 ***1. The Power of Convex Relaxation: Near-Optimal Matrix Completion by E. J. Candes and T. Tao.***
 
+- https://arxiv.org/pdf/0903.1476.pdf
+
 - The Matrix completion problem: Given a matrix $M$ of dimensions $n_1 \times n_2$ and an observation set $\Omega$ with
 $|\Omega| = m << n_1 n_2$, is it possible to reconstruct the matrix only from a small set of observations given that the
 matrix $M$ is of low rank or has an approximately low rank.
