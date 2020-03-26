@@ -11,3 +11,6 @@ Tutorials on Discrete Fourier and Wavelet Transforms.
 ### Install dependencies
 
     pip install -r requirements.txt
+    
+    
+    
