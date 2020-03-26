@@ -7,6 +7,8 @@
 $U$ with dimensions $n_1 \times r$ and $V$ with dimensions $n_2 \times r$ from a set $\Omega$ of $m$ observed entries 
 $\{M_{a, b} : (a, b) \in \Omega \}$ of $M$.
 
+$$\{M_{a, b} : (a, b) \in \Omega \}$$
+
 ```math
 SE = \frac{\sigma}{\sqrt{n}}
 ```
