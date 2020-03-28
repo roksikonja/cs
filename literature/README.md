@@ -45,4 +45,12 @@
         
     - Main results are the lower bounds on $m$.
 
-  
+## Applications in MRI
+
+1. ***MR Image Reconstruction From Highly Undersampled k-Space Data by Dictionary Learning by S. Y. Bresler.***
+
+	- Focus on:
+		- Upgrade Compressed Sensing notion for MR image reconstruction from undersampled k-space data.
+		- Learn dictionary - base in which the signal is sparse - from data.
+		- Enforce sparsity in local patches with overlapping. 
+		- Iterative two-phase optimization technique.
