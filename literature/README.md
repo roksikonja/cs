@@ -45,6 +45,37 @@
         
     - Main results are the lower bounds on $m$.
 
+## Sparse Representations
+
+1 ***K-SVD: An Algorithm for Designing OvercompleteDictionaries for Sparse Representation***
+
+    - Article at https://sites.fas.harvard.edu/~cs278/papers/ksvd.pdf.
+
+    - Problem: Given a set $Y = {y_i}_{i=1}^N$ of training signals we assume that there exists a dictionary $D$ that gave rise to
+    the given training signals via sparse combinations, i.e. we assume that there exists a dictionary $D$, so that solving
+    ($P_0$) for each example $y_i$ gives a sparse representation $x_i$, $y_i = \sum_{j = 1}^K x_{i, j} \cdot d_j$. We
+    want to find the best dictionary $D$.
+    
+    - Sparse coding Problem: Given a signal $y$ and a dictionary $D$ compute a sparse representation representation $x$.
+        - Tipically requires solving $P_0$ or $P_{0, \varepsilon}$, which is a NP-hard problem.
+        - Approximately solved via "pursuit" algorithms
+            - Matching pursuit (MP) and Orthogonal matching pursuit (OMP)- greedy algorithms.
+            - Basis pursuit (BP) and FOCUSS - convex $l_1$ relaxation of $l_0$ norm, motivated by MAP.
+            
+    - Prior art of designing dictionaries.
+        - Design of a dictionary is a generalization of K-means algorithm, where each signal is assigned exactly one cluster 
+        (sparsity) and the dictionary are the cluster centroids.
+        - Maximum likelihood methods: $y = Dx + v$, where $v% is a Gaussian white noise, prior is added on the norm of $x$.
+        - Method of optimal directions (MOD) is an iterative algorithm for dictionary construction.
+        - Maximum a Posteriori methods: Adds a prior on $D$ and follows an iterative procedure.
+        
+    - K-SVD is an iterative algorithm, a generalization of K-means algorithm.
+        - Objective: $\min \norm{Y - DX}_2$ subject to $\forall i$ it holds $\norm{x}_0 \leq T_0$.
+        - Iteration between sparse coding step and codebook update step.
+        - Sparse coding: Use any pursuit algorithm to find $X$ given current dictionary $D$
+        - Codebook update: Each dictionary column is updated by computing SVD on the corresponding error matrix.
+        - Guaranteed improvement at each step and convergence to a local minima.
+
 ## Applications in MRI
 
 1. ***MR Image Reconstruction From Highly Undersampled k-Space Data by Dictionary Learning by S. Y. Bresler.***
