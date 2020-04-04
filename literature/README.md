@@ -47,10 +47,10 @@
 
 ## Sparse Representations
 
-1 ***K-SVD: An Algorithm for Designing OvercompleteDictionaries for Sparse Representation***
+1. ***K-SVD: An Algorithm for Designing OvercompleteDictionaries for Sparse Representation***
 
     - Article at https://sites.fas.harvard.edu/~cs278/papers/ksvd.pdf.
-
+    
     - Problem: Given a set $Y = {y_i}_{i=1}^N$ of training signals we assume that there exists a dictionary $D$ that gave rise to
     the given training signals via sparse combinations, i.e. we assume that there exists a dictionary $D$, so that solving
     ($P_0$) for each example $y_i$ gives a sparse representation $x_i$, $y_i = \sum_{j = 1}^K x_{i, j} \cdot d_j$. We
@@ -80,8 +80,22 @@
 
 1. ***MR Image Reconstruction From Highly Undersampled k-Space Data by Dictionary Learning by S. Y. Bresler.***
 
-	- Focus on:
-		- Upgrade Compressed Sensing notion for MR image reconstruction from undersampled k-space data.
-		- Learn dictionary - base in which the signal is sparse - from data.
-		- Enforce sparsity in local patches with overlapping. 
-		- Iterative two-phase optimization technique.
+    - Problem: $\min_{x, D, \Gamma} \sum_{i, j} \norm{R_{i, j} x - D \alpha_{i, j}}_2 + \nu \norm{F_u x - y}_2$ subject to
+    $\norm{\alpha_{i, j}}_0 \leq T_0$, where $x$ is the reconstructed image, $y$ the measurements in k-space, $D$ the
+     dictionary to be learned, and $\alpha$'s sparse codes of the patches.   
+    - Learn dictionary - base in which the signal is sparse - from data suited for a particular, specific task.
+    - Enforce sparsity in local patches with overlapping through a patch extraction operator $R_{i, j}$.
+    - Iterative two-phase optimization technique.
+        - Dictionary learning step: Fix $x$, current reconstructed image estimate, and solve for $D$ and $\Gamma$ by 
+        utilizing the K-SVD algorithm, where OMP is used for sparse coding.
+        - Updating the reconstruction: Fix $D$ and $\Gamma$, and solve for $x$ through a closed form update.
+
+1. ***Image Reconstruction: From Sparity to Data-adaptive Methods and Machine Learning by S. Ravishankar et al.***
+
+    - Types of reconstruction methods:
+        - Analytical: filtered back-projection, inverse Fourier transform.
+        - Iterative: reduce noise and artifacts.
+        - Sparsity and low-rank.
+        - Adaptive or data-driven.
+   - Paper gives an overview of the progress of the latter two.
+   
