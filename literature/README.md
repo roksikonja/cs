@@ -76,6 +76,16 @@
         - Codebook update: Each dictionary column is updated by computing SVD on the corresponding error matrix.
         - Guaranteed improvement at each step and convergence to a local minima.
 
+
+### Wavelets
+
+1. ***An Introduction to Wavelets by A. Graps***
+
+    - Presents an overview of Wavelet theory up to 1995.
+    - Describes the history of wavelets and their connection to the Fourier transform.
+    - Presents applications in de-noising, image reconstruction, sound synthesis.
+
+
 ## Applications in MRI
 
 1. ***MR Image Reconstruction From Highly Undersampled k-Space Data by Dictionary Learning by S. Y. Bresler.***
